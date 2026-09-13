@@ -38,6 +38,14 @@ taskForm.addEventListener("submit" , function(event)  {
         deleteButton.addEventListener("click",function() {
             taskDiv.remove();
         });
+        const completeButton = document.createElement("button");
+        completeButton.textContent=" Complete";
+        completeButton.addEventListener("click", function() {
+            task.status = "completed";
+            completeButton.textContent = "Completed";
+        
+        });
+        taskDiv.appendChild(completeButton);
         taskDiv.appendChild(deleteButton);
         taskContainer.appendChild(taskDiv);
     });
