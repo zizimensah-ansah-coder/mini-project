@@ -12,6 +12,21 @@ let tasks = [
 ];
 //function to display tasks
 function displayTasks() {
+   
+}
+
+displayTasks();
+const taskForm =document.getElementById("taskForm");
+const taskList = document.getElementById("taskList");
+taskForm.addEventListener("submit" , function(event)  {
+    event.preventDefault();
+    const title = document.getElementById("taskTitle").value;
+    const status = document.getElementById("taskStatus").value;
+    const newTask ={
+        title: title,
+        status: status
+    };
+    tasks.push(newTask);
     tasks.forEach(function(task) {
         const taskDiv = document.createElement("div");
         taskDiv.innerHTML =`
@@ -20,6 +35,5 @@ function displayTasks() {
         `;
         taskContainer.appendChild(taskDiv);
     });
-}
-
-displayTasks();
+    console.log(newTask);
+});
