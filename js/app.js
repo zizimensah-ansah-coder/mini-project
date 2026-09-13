@@ -33,6 +33,12 @@ taskForm.addEventListener("submit" , function(event)  {
         <p> Title:${task.title}</p>
         <p>Status:${task.status}</p>
         `;
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent="Delete";
+        deleteButton.addEventListener("click",function() {
+            taskDiv.remove();
+        });
+        taskDiv.appendChild(deleteButton);
         taskContainer.appendChild(taskDiv);
     });
     console.log(newTask);
