@@ -1,0 +1,12 @@
+*{
+    background-color: aqua;
+}
+.task-details {
+    display: flex;
+    flex-direction: column;
+    gap:0;
+}
+.task-details p {
+    margin: 0;
+    padding: 0;
+}
