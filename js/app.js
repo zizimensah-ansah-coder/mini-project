@@ -4,7 +4,7 @@ const allbtn=document.getElementById("allbtn");
 const completedbtn=document.getElementById("completedbtn");
 const pendingbtn=document.getElementById("pendingbtn");
 // Creating an array of tasks
-let tasks = [
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [
     {
         title:"Go for shopping",
         status:"pending"
@@ -52,6 +52,7 @@ taskForm.addEventListener("submit" , function(event)  {
         completeButton.textContent=" Complete";
         completeButton.addEventListener("click", function() {
         task.status = "completed";
+        
             completeButton.textContent = "Completed  ✅";
         });
         localStorage.setItem("tasks",JSON.stringify(tasks));
